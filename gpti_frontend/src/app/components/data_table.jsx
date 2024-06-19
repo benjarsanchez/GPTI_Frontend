@@ -1,6 +1,6 @@
 import { Card, Typography } from "./material_UI_tailwind.jsx";
  
-const TABLE_HEAD = ["Precio", "Nombre", "Teléfono", "Correo Electrónico", "Ubicación", "Sitio Web"];
+const TABLE_HEAD = ["Precio", "Nombre", "Teléfono", "Correo Electrónico", "Ubicación", "Sitio Web", "Servicio"];
  
 const TABLE_ROWS = [
   // Nuevos datos de servicios técnicos
@@ -53,16 +53,6 @@ const TABLE_ROWS = [
     site_url: "https://tecnicosinformaticamaipu.cl"
   }
 ];
-
-const data_fields = [
-  "id",
-  "name",
-  "phone",
-  "email",
-  "location",
-  "price",
-  "url"
-];
  
 export default function DataTable({ data }) {
   return (
@@ -84,7 +74,7 @@ export default function DataTable({ data }) {
           </tr>
         </thead>
         <tbody>
-          {data.map(({ name, phone, email, location, price, url }, index) => {
+          {data.map(({ name, phone, email, location, price, url, service }, index) => {
             const isLast = index === TABLE_ROWS.length - 1;
             const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
             return (
@@ -117,6 +107,11 @@ export default function DataTable({ data }) {
                 <td className={classes}>
                   <Typography variant="small" color="blue-gray" className="font-normal">
                     {url || "-"}
+                  </Typography>
+                </td>
+                <td className={classes}>
+                  <Typography variant="small" color="blue-gray" className="font-normal">
+                    {service || "-"}
                   </Typography>
                 </td>
               </tr>
