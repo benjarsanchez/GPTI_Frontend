@@ -105,9 +105,13 @@ export default function DataTable({ data }) {
                   </Typography>
                 </td>
                 <td className={classes}>
-                  <Typography variant="small" color="blue-gray" className="font-normal">
-                    {url || "-"}
-                  </Typography>
+                  {url ? (
+                    <Typography variant="small" color="blue-gray" className="font-normal">
+                      <a href={url} target="_blank" rel="noopener noreferrer" style={{ color: 'blue', textDecoration: 'underline' }}>{url}</a>
+                    </Typography>
+                  ) : (
+                    <Typography variant="small" color="blue-gray" className="font-normal">-</Typography>
+                  )}
                 </td>
                 <td className={classes}>
                   <Typography variant="small" color="blue-gray" className="font-normal">
