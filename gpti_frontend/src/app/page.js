@@ -50,7 +50,7 @@ export default function Home() {
           <div className="mb-10 mt-5 flex w-96">
             <SelectOptions value={type} setValue={setType} />
           </div>
-          <div className="mb-5">
+          <div className="mb-5 w-full overflow-auto">
             {data && data.length > 0 ? (
               <DataTable data={data} />
             ) : (
